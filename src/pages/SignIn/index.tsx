@@ -1,28 +1,27 @@
 import React from 'react';
-import { Image } from 'react-native';
-import Icon from 'react-native-vector-icons/Feather';
+import { Image, View } from 'react-native';
+
 import logoImg from '../../assets/logo.png';
 // --------Components-------
 import Input from '../../components/Input';
 import Button from '../../components/Button';
+import Link from '../../components/Link';
+import Container from '../../components/KeyboardScrollView';
 // --------Styles--------
-import {
-  Container,
-  Title,
-  ForgotPassword,
-  ForgotPasswordText,
-  CreateAccountButton,
-  CreateAccountButtonText,
-} from './styles';
+import { Title, ForgotPassword, ForgotPasswordText } from './styles';
 
 const SignIn: React.FC = () => {
   return (
     <>
-      <Container>
-        <Image source={logoImg} />
-        <Title>Faça seu logon</Title>
+      <Container padding={320}>
+        <Image style={{ marginTop: 145 }} source={logoImg} />
+        <View>
+          <Title>Faça seu logon</Title>
+        </View>
+
         <Input name="email" icon="mail" placeholder="E-mail" />
         <Input name="password" icon="lock" placeholder="Senha" />
+
         <Button
           onPress={() => {
             console.log('Click');
@@ -38,15 +37,9 @@ const SignIn: React.FC = () => {
           <ForgotPasswordText>Esqueci minha senha</ForgotPasswordText>
         </ForgotPassword>
       </Container>
-
-      <CreateAccountButton
-        onPress={() => {
-          console.log('Criar conta');
-        }}
-      >
-        <Icon name="log-in" size={20} color="#ff9000" />
-        <CreateAccountButtonText>Criar uma conta</CreateAccountButtonText>
-      </CreateAccountButton>
+      <Link to="SignUp" icon="log-in" color="#ff9000">
+        Criar uma conta
+      </Link>
     </>
   );
 };
