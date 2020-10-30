@@ -6,7 +6,7 @@ import { FormHandles } from '@unform/core';
 import * as Yup from 'yup';
 import { useNavigation } from '@react-navigation/native';
 import logoImg from '../../assets/logo.png';
-import getValidationErrors from '../../utils/getValidationErros';
+import getValidationErrors from '../../utils/getValidationErrors';
 // --------Components-------
 import Input from '../../components/Input';
 import Button from '../../components/Button';
