@@ -38,7 +38,7 @@ const AppointmentCreated: React.FC = () => {
         },
       ],
     });
-  }, []);
+  }, [navigation]);
 
   return (
     <Container>
